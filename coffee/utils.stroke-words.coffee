@@ -132,8 +132,8 @@ do ->
   buffer = {}
   source = "json" # "xml" or "json"
   dirs =
-    "xml": "./utf8/"
-    "json": "./json/"
+    "xml": (if window.isCordova then "http://stroke.moedict.tw/" else "./utf8/")
+    "json":  (if window.isCordova then "http://stroke-json.moedict.tw/" else "./json/")
   fetchers =
     "xml": fetchStrokeJSONFromXml
     "json": fetchStrokeJSON
